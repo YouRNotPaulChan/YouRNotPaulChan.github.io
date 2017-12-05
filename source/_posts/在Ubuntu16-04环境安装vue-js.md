@@ -53,7 +53,7 @@ tags: 随手记
   webpack-dev-server -v //查看webpack-dev-server版本
   ```
 
-  ### 3、安装vue-li
+  ### 3、安装vue-cli
   按照以下命令:
   ```bash
   npm install -g vue-cli //全局安装vue-cli
