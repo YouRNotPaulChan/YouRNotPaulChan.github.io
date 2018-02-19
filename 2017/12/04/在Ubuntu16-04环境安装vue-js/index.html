@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="陈越在 Github 上的个人博客">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="http://p061xvmi7.bkt.clouddn.com/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="PaulChan#陈越" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        在Ubuntu16.04环境安装vue.js｜PaulChan&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://yournotpaulchan.github.io/2017/12/04/在Ubuntu16-04环境安装vue-js/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('http://p061xvmi7.bkt.clouddn.com/yellowcat.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    PaulChan#陈越
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/tags/">tags</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://p061xvmi7.bkt.clouddn.com//3background.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://p061xvmi7.bkt.clouddn.com//3background.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>在Ubuntu16.04环境安装vue.js</h1>
+                    
+                    <span class="meta">
+                         作者 陈越
+                        <span>
+                          日期 2017-12-04
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#随手记"
+                           title="随手记">随手记</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            在Ubuntu16.04环境安装vue.js
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="start"><a href="#start" class="headerlink" title="start"></a>start</h2><p>  最近打算尝试一下前端开发，刚好目前公司有前端项目启动，我抱着试一试的心态加入了<br>  团队，由于选择的是vue.js，所以我花了一下午在电脑安装了vue.js的环境，由于我的<br>  电脑使用的是Ubuntu16.04系统，所以下面所经历的过程都是在Ubuntu系统操作的</p>
+<h3 id="1、首先需要安装node-js，并且是稳定版本，建议是6-10-3"><a href="#1、首先需要安装node-js，并且是稳定版本，建议是6-10-3" class="headerlink" title="1、首先需要安装node.js，并且是稳定版本，建议是6.10.3"></a>1、首先需要安装node.js，并且是稳定版本，建议是6.10.3</h3><p>  （原来我是4.2.6的所以老是导致后面的webpack安装报错）</p>
+<p>  从官网上面下载nodejs6.10.3版本<br>  英文网址：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br>  中文网址：<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a><br>  下载tar.gz到本地目录下，然后解压，可以将名字改为nodejs,这样比较方便记住地址:</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf   node-v6.10.0-linux-x64.tar.xz</span><br><span class="line">mv node-v6.10.0-linux-x64  nodejs</span><br></pre></td></tr></table></figure>
+<p>  接着建立软链接，变为全局:<br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ln -s /app/software/nodejs/bin/npm /usr/local/bin/ </span><br><span class="line">ln -s /app/software/nodejs/bin/node /usr/local/bin/</span><br></pre></td></tr></table></figure></p>
+<p>  其中，app/software是你安装nodejs的目录，根据自己的地址需要修改，<br>  最后，检查一下nodejs是否安装成功:<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、安装webpack2-5-1版本"><a href="#2、安装webpack2-5-1版本" class="headerlink" title="2、安装webpack2.5.1版本"></a>2、安装webpack2.5.1版本</h3><p>  webpack相当于模块加载器兼打包工具</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g webpack //全局安装</span><br><span class="line">npm install -g webpack-dev-server //安装调试工具</span><br></pre></td></tr></table></figure>
+<p>  webpack和webpack-dev-serve都需要全局安装，之前由于nodejs安装版本不对，每次安装之后<br>  都会报错，安装成功之后，执行以下命令:<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">webpack -v //查看webpack版本</span><br><span class="line">webpack-dev-server -v //查看webpack-dev-server版本</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、安装vue-cli"><a href="#3、安装vue-cli" class="headerlink" title="3、安装vue-cli"></a>3、安装vue-cli</h3><p>  按照以下命令:<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g vue-cli //全局安装vue-cli</span><br><span class="line">vue init webpack projectname // 这里会让你重新输入一遍项目名，只能小写，之后生成项目名为ProjectName的模板</span><br><span class="line"><span class="built_in">cd</span> ProjectName //进入项目文件</span><br><span class="line">npm install //初始化安装</span><br></pre></td></tr></table></figure></p>
+<p>  以上的命令在我的系统中经常会出现因为权限限制不能创建的问题，如果出现这种问题<br>  的话，只需要在命令前加入sudo就行了</p>
+<p>  最后，执行:<br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
+<p>  在浏览器中打开localhost:8080就可以看到如下画面了<br>  <img src="http://p061xvmi7.bkt.clouddn.com/vuejs.png" alt=""></p>
+<p>  如果已经安装了nodejs想升级版本的话，可以执行如下命令<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm cache clean -f //清除npm cache</span><br><span class="line">npm install -g n //安装node的n模块</span><br><span class="line">n stable //升级至最新稳定版本</span><br></pre></td></tr></table></figure></p>
+<p>  如果需要安装指定版本的话，可使用<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">n 6.10.3  //这里的 6.10.3 是需要指定的版本号</span><br></pre></td></tr></table></figure></p>
+<p>  升级npm版本的话<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure></p>
+<h3 id="4、遇到的错误"><a href="#4、遇到的错误" class="headerlink" title="4、遇到的错误"></a>4、遇到的错误</h3><p>  在第三步创建新的项目之后，在项目文件夹中执行npm install报错，报错信息如下<br>  <img src="http://p061xvmi7.bkt.clouddn.com/vuejserrorphoto.jpg" alt=""><br>  这是因为chromedriver这个下载不了导致的，搜索了vuejs的github主页里的<a href="https://github.com/vuejs/vue-router/issues/261#issuecomment-218618180" target="_blank" rel="noopener">issues</a>，发现<br>  有个解决方法，就是将chromedriver的cdn改成国内淘宝的cdn<br>  执行如下命令:<br>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver</span><br></pre></td></tr></table></figure></p>
+<p>  谢谢观看</p>
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/12/13/Ubuntu安装并配置haroopad/" data-toggle="tooltip" data-placement="top"
+                           title="Ubuntu安装并配置haroopad">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/12/04/创建tags时候的坑/" data-toggle="tooltip" data-placement="top"
+                           title="创建tags时候的坑">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#start"><span class="toc-text">start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、首先需要安装node-js，并且是稳定版本，建议是6-10-3"><span class="toc-text">1、首先需要安装node.js，并且是稳定版本，建议是6.10.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、安装webpack2-5-1版本"><span class="toc-text">2、安装webpack2.5.1版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、安装vue-cli"><span class="toc-text">3、安装vue-cli</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、遇到的错误"><span class="toc-text">4、遇到的错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#end"><span class="toc-text">end</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#随手记"
+                           title="随手记">随手记</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/chen-yue-15-41">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/YouRNotPaulChan">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; PaulChan#陈越 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yournotpaulchan.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://p061xvmi7.bkt.clouddn.com/header.jpg">
+</body>
+
+</html>
