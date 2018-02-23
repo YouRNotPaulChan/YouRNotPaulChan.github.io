@@ -185,10 +185,18 @@ li {
     display: block;
     padding-left: 70px;
 }
+
+.preview {
+    position:absolute;
+    background:#fff;
+    padding:10px;
+    display:none;
+}
+
 </style>
 <!-- Chinese Version -->
 <div class="zh post-container">
-    < <div class="content" id="about-header">
+    <div class="content" id="about-header">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
                 <div>
@@ -196,7 +204,7 @@ li {
                 </div>
                 <div class="text-center">
                     <h2>陈越/男/23岁</h2>
-                    <p>意向职位：ruby开发工程师,Web前端开发工程师</p>
+                    <p>ruby开发工程师&Web前端开发工程师</p>
                 </div>
             </div>
         </div>
@@ -204,7 +212,7 @@ li {
         <div class="row" id="offer">
             <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
                 <div class="work-experience">
-                    <h3 class="title"> 工作经历</h3>
+                    <h3 class="title"><span class="glyphicon glyphicon-wrench"></span>工作经历</h3>
                     <p>
                         2017年7月-至今, 在佛山楼兰家居有限公司任ruby开发，前端开发职务
                     </p>
@@ -212,18 +220,18 @@ li {
                         <ul>
                             <li>1. 使用 ruby on rails + bootstrap 编写和维护公司CRM首页</li>
                             <li>2. 使用 ES6 + react + Babel + webpack, 参与网站前端的开发</li>
-                            <li>3. 独立负责开发一款面向客户投资的微信小程序, 在开发的过程中最棘手的问题是实现省市区三级联动功能, 和使用第三方 wx-chart 组件实现小程序显示统计图表的功能</li>
-                            <li>4. 独立负责开发一款与pc版图库配套的微信小程序, 在开发的过程中最棘手的问题是实现列表加载的各种功能, 和使用第三方 wx-toast 组件实现小程序长时间显示提示的功能</li>
+                            <li>3. 独立负责开发一款面向客户投资的微信小程序, 在开发的过程中最棘手的问题<br/>是实现省市区三级联动功能, 和使用第三方 wx-chart 组件实现小程序显示统计图表的功能</li>
+                            <li>4. 独立负责开发一款与pc版图库配套的微信小程序, 在开发的过程中最棘手的问<br/>题是实现列表加载的各种功能, 和使用第三方 wx-toast 组件实现小程序长时间显示提示的功能</li>
                         </ul>
                     </div>
                 </div>
                 <div class="project-show">
-                    <h3 class="title"><span class="glyphicon glyphicon-folder-open"></span> Project</h3>
+                    <h3 class="title"><span class="glyphicon glyphicon-folder-open"></span> 主要项目经历</h3>
                     <div class="body-section">
                         <ul>
-                            <li>为一款 Node.js 博客系统开发的两款主题:<a href="https://github.com/Haojen/hexo-theme-Anisina" target="_blank"> Anisina</a> 与 <a href="https://github.com/Haojen/hexo-theme-Anisina" target="_blank">Claudia</a></li>
-                            <li><a href="https://github.com/Haojen/alfred-Parrot" target="_blank"> 一款支持多语种的 Alfred Workflow 翻译插件</a></li>
-                            <li> <a href="http://haojen.github.io/my-works/" target="_blank">更早期的项目<span class="glyphicon glyphicon-link"></span></a></li>
+                            <li>为实习公司开发的CRM系统:<a href="https://crm.lolatc.com" target="_blank"> Lola CRM</a></li>
+                            <li class="apreview" id="http://p061xvmi7.bkt.clouddn.com//18-2-23/7850739.jpg" style="width: 105px;">E合伙小程序<span class="glyphicon glyphicon-hand-left"></span></li>
+                            <li class="apreview" id="http://p061xvmi7.bkt.clouddn.com//18-2-23/7850739.jpg" style="width: 105px;">E图库小程序<span class="glyphicon glyphicon-hand-left"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -231,41 +239,84 @@ li {
                     <h3 class="title"><span class="glyphicon glyphicon-user"></span> 其他</h3>
                     <div class="body-section">
                         <ul>
-                            <li>学历: 初中</li>
-                            <li>个人博客: <a target="_blank" href="http://haojen.github.io/"> haojen.github.io <span class="glyphicon glyphicon-link"></span> </a></li>
-                            <li>GitHub: <a target="_blank" href="http://github.com/haojen">http://github.com/haojen <span class="glyphicon glyphicon-link"></span></a></li>
-                            <li>爱好: 单片机,硬件,健身</li>
+                            <li>学历: 本科</li>
+                            <li>个人博客: <a target="_blank" href="http://doublechen.top/"> PaulChan's Blog <span class="glyphicon glyphicon-link"></span> </a></li>
+                            <li>GitHub: <a target="_blank" href="https://github.com/YouRNotPaulChan">https://github.com/YouRNotPaulChan <span class="glyphicon glyphicon-link"></span></a></li>
+                            <li>详细简历: <a target="_blank" href="http://doublechen.top/resume">resume <span class="glyphicon glyphicon-link"></span></a></li>
+                            <li>爱好: 写博客,足球,健身,编程</li>
                         </ul>
                     </div>
                 </div>
                 <div>
-                    <h3 class="title">正在深入学习的</h3>
+                    <h3 class="title"><span class="glyphicon glyphicon-book"></span> 正在深入学习的</h3>
                     <div class="body-section">
                         <ul>
-                            <li>Vue 组件化</li>
-                            <li>React Native</li>
-                            <li>Webpack</li>
+                            <li>react redux</li>
+                            <li>微信小程序</li>
+                            <li>api开发</li>
                             <li>ES6/7 新特性</li>
                         </ul>
                     </div>
                 </div>
                 <div class="contact-show">
                     <h3 class="title "> <span class="glyphicon glyphicon-earphone"></span> 联系我</h3>
-                    <div>
+                    <div class="body-section">
                         <ul>
                             <li>
-                                电 &nbsp; &nbsp; &nbsp; 话: 15175758087
+                                电 &nbsp; &nbsp; &nbsp; 话: 15816170703
                             </li>
                             <li>
-                                邮 &nbsp; &nbsp; &nbsp; 箱: haojen.ma@gmail.com
+                                邮 &nbsp; &nbsp; &nbsp; 箱: 15816170703@163.com
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+   </div>
 </div>
-</div>
+
+<script src="/js/jquery.min.js"></script>
+
+<script>
+    $(function() {
+        imagePreview();
+      });
+        this.imagePreview = function () {
+        // 图片距离鼠标的位置
+        this.xOffset = 10;
+        this.yOffset = -10;
+
+        //hover([over,]out)
+        //over:鼠标移到元素上要触发的函数
+        //out:鼠标移出元素要触发的函数
+
+        //鼠标悬浮的事件
+        $(".apreview").hover(function (e) {
+            this.t = this.title;//显示在图片下的标题
+            this.title = "";    //将title置为空，不让文字悬浮提示
+            this.imgSr = this.id;//图片的连接
+            this.c = (this.t != "") ? "<br/>" + this.t : "";
+            $("body").append("<p class='preview'><img src='" + this.imgSr + "' alt='Image preview' width='258' height='278' />" + this.c + "</p>");
+            $(".preview")
+                .css("top", (e.pageY + yOffset) + "px")
+                .css("left", (e.pageX + xOffset) + "px")
+                .fadeIn("fast");
+        },
+        function () {
+            this.title = this.t;//恢复title
+            $(".preview").remove();
+        });
+
+
+        //鼠标移动的事件，让图片随着移动
+        $(".apreview").mousemove(function (e) {
+            $(".preview")
+                .css("top", (e.pageY - yOffset) + "px")
+                .css("left", (e.pageX + xOffset) + "px");
+        });
+    };
+</script>
 <!-- Footer -->
 <!-- Footer -->
 <footer>
@@ -312,7 +363,9 @@ li {
                     <br>
                     Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
                 </p>
-
+                 <div style="width:300px;margin:0 auto; padding:20px 0; font-size: 15px">
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44510202000119" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://p061xvmi7.bkt.clouddn.com//18-2-21/15344726.jpg" style="float:left;"/><p style="float: left; height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44510202000119号</p></a>
+                </div>
             </div>
         </div>
     </div>
@@ -366,6 +419,18 @@ li {
 
 
 <!-- Baidu Tongji -->
+
+<script>
+    var _baId = '4995ec9e5aa95e3f7fae4960c57b6eef';
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + _baId;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
 
 <!-- swiftype -->
