@@ -4,14 +4,14 @@
 
 # Site
 title: PaulChan#陈越 # your blog title name
-subtitle:  
+subtitle:
 author: 陈越 # 作者
-language: 
-timezone: 
+language:
+timezone:
 
 # custom Site settings
 # more detail check out docs
-SEOTitle: PaulChan's blog 
+SEOTitle: PaulChan's blog
 header-img: http://p061xvmi7.bkt.clouddn.com/yellowcat.jpg
 email: 15816170703@163.com
 description: "陈越在 Github 上的个人博客"
@@ -29,19 +29,19 @@ permalink_defaults:
 
 # SNS settings
 # RSS:
-weibo_username: 
+weibo_username:
 zhihu_username: chen-yue-15-41
 github_username: YouRNotPaulChan
-twitter_username: 
-facebook_username:  
-linkedin_username:  
+twitter_username:
+facebook_username:
+linkedin_username:
 
 # Build settings
 anchorjs: false                        # if you want to customize anchor. check out line:181 of `post.html`
 
 
-# Disqus settings 
-disqus_username: 
+# Disqus settings
+disqus_username:
 
 # Duoshuo settings
 duoshuo_username:  # 你的多说帐号
@@ -53,7 +53,7 @@ use_livere:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id:
+ba_track_id: 4995ec9e5aa95e3f7fae4960c57b6eef
 # Google Analytics
 ga_track_id:             # Format: UA-xxxxxx-xx
 ga_domain:
@@ -151,10 +151,10 @@ post-default-img: http://p061xvmi7.bkt.clouddn.com/home_background.jpg
 post-default-img-mobile: #移动端显示的图片
 
 # search api , set your custom key
-swiftype_key: 
+swiftype_key:
 
 
-# archive page title 
+# archive page title
 archive:
     title: archives
     description: 可以根据归档日期检索所有文件
