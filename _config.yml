@@ -14,7 +14,7 @@ timezone:
 SEOTitle: PaulChan's blog
 header-img: http://p061xvmi7.bkt.clouddn.com/yellowcat.jpg
 email: 15816170703@163.com
-description: "陈越在 Github 上的个人博客"
+description: "陈越的个人博客"
 keyword: # seo key words
 
 favicon: http://p061xvmi7.bkt.clouddn.com/favicon.ico # your favicon png
@@ -32,7 +32,7 @@ permalink_defaults:
 weibo_username:
 zhihu_username: chen-yue-15-41
 github_username: YouRNotPaulChan
-twitter_username:
+twitter_username: PaulChan1995
 facebook_username:
 linkedin_username:
 
