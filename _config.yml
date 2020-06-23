@@ -12,12 +12,12 @@ timezone:
 # custom Site settings
 # more detail check out docs
 SEOTitle: PaulChan's blog
-header-img: http://p061xvmi7.bkt.clouddn.com/yellowcat.jpg
+header-img: http://106.15.201.105/photos/4c16bfc343b84bbef41670e0878e0974.jpg
 email: 15816170703@163.com
 description: "陈越的个人博客"
 keyword: # seo key words
 
-favicon: http://p061xvmi7.bkt.clouddn.com/favicon.ico # your favicon png
+# favicon: http://p061xvmi7.bkt.clouddn.com/favicon.ico # your favicon png
 # custom end
 
 # URL
@@ -61,7 +61,7 @@ ga_domain:
 # Sidebar settings
 sidebar: true
 sidebar-about-description: ”一个开发者“ # 个人描述
-sidebar-avatar: http://p061xvmi7.bkt.clouddn.com/header.jpg   # use absolute URL
+sidebar-avatar: http://106.15.201.105/photos/header.jpg   # use absolute URL
 
 
 # Featured Tags
@@ -138,17 +138,21 @@ deploy:
 
 
 # img CDN path
-cdn-url: http://p061xvmi7.bkt.clouddn.com/ # 你的CDN地址
+# cdn-url: http://p061xvmi7.bkt.clouddn.com/ # 你的CDN地址
+cdn-url: http://106.15.201.105/photos/ # 你的CDN地址
 
 # Qiniu imageView2 API
 # More info http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html
-clip-content: "?imageView2/1/w/1400/h/400/interlace/1/q/90"
-clip-avatar: "?imageView2/2/w/300/h/300/interlace/1/q/90"
-clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
+# clip-content: "?imageView2/1/w/1400/h/400/interlace/1/q/90"
+# clip-avatar: "?imageView2/2/w/300/h/300/interlace/1/q/90"
+# clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
+clip-content: ""
+clip-avatar: ""
+clip-home-post-bg: ""
 
 # post default images
-post-default-img: http://p061xvmi7.bkt.clouddn.com/home_background.jpg
-post-default-img-mobile: #移动端显示的图片
+post-default-img: "http://106.15.201.105/photos/LaughingOwl_ZH-CN8548558025_1920x1080.jpg"
+post-default-img-mobile: "http://106.15.201.105/photos/4c16bfc343b84bbef41670e0878e0974.jpg"
 
 # search api , set your custom key
 swiftype_key:
